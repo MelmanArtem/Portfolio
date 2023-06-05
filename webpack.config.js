@@ -10,7 +10,7 @@ module.exports = {
     clean: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin ({
         template: './src/index.html'
     })
   ],
@@ -18,11 +18,11 @@ module.exports = {
     rules: [
         {
             test: /\.(?:ico|png|jpg|jpeg|svg)$/i,
-            type: 'asset/resourse'
+            type: 'asset/resource'
         },
         {
             test: /\.html$/i,
-            loader:"html-loader"
+            loader: "html-loader"
         }
     ]
   }
