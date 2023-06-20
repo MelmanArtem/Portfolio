@@ -1,0 +1,61 @@
+body {
+    background-color: #232326;
+}
+$text: #F3F2F0;
+$hover: #D40000;
+
+.header {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    &__nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+        gap: 50px;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 14px;
+        color: $text;
+        transition: 0.4s;
+        &:hover {
+            color: $hover;
+        }
+    }
+    &__contact {
+        display: flex;
+        font-size: 14px;
+        line-height: 150%;
+    }
+    &__tel {
+        text-decoration: none;
+        color: $text;
+        margin-right: 10px;
+        transition: 0.4s;
+        &:hover {
+            color: $hover;
+        }
+    }
+    &__mail {
+        text-decoration: none;
+        color: $text;
+        margin-left: 10px;
+        transition: 0.4s;
+        &::before {
+            content: '';
+            position: relative;
+            right: 10px;
+            opacity: 0.5;
+            border: 1px solid $text;
+        }
+        &:hover {
+            color: $hover;
+        }
+    }
+}
