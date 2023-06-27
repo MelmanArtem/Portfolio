@@ -1,8 +1,21 @@
-body {
-    background-color: #232326;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 $text: #F3F2F0;
 $hover: #D40000;
+$background: #232326;
+$white:#FFFFFF;
+
+$font-inter:'Inter', sans-serif;
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family: $font-inter;
+    background-color: $background;
+}
 
 .header {
     max-width: 1140px;
@@ -11,17 +24,18 @@ $hover: #D40000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     cursor: pointer;
     &__nav {
         display: flex;
         list-style-type: none;
         margin: 0;
         padding-left: 0;
-        gap: 50px;
+        gap: 5rem;
     }
     &__link {
         text-decoration: none;
-        font-size: 14px;
         color: $text;
         transition: 0.4s;
         &:hover {
@@ -30,13 +44,12 @@ $hover: #D40000;
     }
     &__contact {
         display: flex;
-        font-size: 14px;
         line-height: 150%;
     }
     &__tel {
         text-decoration: none;
         color: $text;
-        margin-right: 10px;
+        margin-right: 1rem;
         transition: 0.4s;
         &:hover {
             color: $hover;
@@ -45,12 +58,12 @@ $hover: #D40000;
     &__mail {
         text-decoration: none;
         color: $text;
-        margin-left: 10px;
+        margin-left: 1rem;
         transition: 0.4s;
         &::before {
             content: '';
             position: relative;
-            right: 10px;
+            right: 1rem;
             opacity: 0.5;
             border: 1px solid $text;
         }
