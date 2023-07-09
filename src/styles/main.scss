@@ -151,18 +151,16 @@ body {
     &::before {
         content: "";
         display: block;
-        width: 0%;
-        bottom: -50%;
+        width: 1%;
+        top: 10%;
         height: 2px;
-        background-color: #010101;
+        background-color: $text;
         position: absolute;
-        left: 50%;
+        left: 3%;
         position: absolute;
         -webkit-transition: width .3s ease-in-out;
-        -moz--transition: width .3s ease-in-out;
         transition: width .3s ease-in-out;
         -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
         transform: translateX(-50%);
         border-radius: 100px;
     }
