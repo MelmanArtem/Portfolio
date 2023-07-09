@@ -131,6 +131,46 @@ body {
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 3rem;
+    row-gap: 6rem;
     column-gap: 3rem;
+    border: 1px solid white;
+    margin-bottom: 20rem;
+}
+.disscussion  { 
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: inherit;
+    color: $text;
+    line-height: 2.4rem;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+    &::before {
+        content: "";
+        display: block;
+        width: 0%;
+        bottom: -50%;
+        height: 2px;
+        background-color: #010101;
+        position: absolute;
+        left: 50%;
+        position: absolute;
+        -webkit-transition: width .3s ease-in-out;
+        -moz--transition: width .3s ease-in-out;
+        transition: width .3s ease-in-out;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-radius: 100px;
+    }
+    &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(/src/images/strelka.svg) no-repeat;
+        display: block;
+        position: absolute;
+        bottom: 11.2rem;
+        left: 17rem;
+    }
 }
