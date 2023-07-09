@@ -135,6 +135,9 @@ body {
     column-gap: 3rem;
     border: 1px solid white;
     margin-bottom: 20rem;
+    &_box {
+        position: relative;
+    }
 }
 .disscussion  { 
     font-size: 1.6rem;
@@ -170,7 +173,7 @@ body {
         background: url(/src/images/strelka.svg) no-repeat;
         display: block;
         position: absolute;
-        bottom: 11.2rem;
-        left: 17rem;
+        top: .9rem;
+        left: 16rem;
     }
 }
