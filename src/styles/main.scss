@@ -136,17 +136,22 @@ body {
     &_box {
         position: relative;
     }
+    &__item1 {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    &__item2 {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+    }
     &__line {
         grid-column: 1 / 3;
         width: 100%;
         height: 1px;
         background: $text;
-    }
-    &__item2 {
-        display: flex;
-        justify-self: end;
-        align-items: center;
-        position: relative;
     }
 }
 .disscussion  { 
@@ -165,8 +170,52 @@ body {
         background: url(/src/images/strelka.svg) no-repeat;
         display: block;
         position: absolute;
-        top: .9rem;
+        top: 2.2rem;
         left: 16rem;
+    }
+}
+.social {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.8rem;
+    list-style-type: none;
+    &__item1 {
+        display: flex;
+        gap: 2.8rem;
+    }
+    &__item2 {
+        display: flex;
+        gap: 2.8rem;
+        &::before {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 24px;
+            background: $text;
+            opacity: .5;
+        }
+    }
+    &__item3 {
+        display: flex;
+        gap: 2.8rem;
+        &::before {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 24px;
+            background: $text;
+            opacity: .5;
+        }
+    }
+    &__link {
+        position: relative;
+        font-size: 1.6rem;
+        transition: .3s;
+        text-decoration: none;
+        color: $text;
+        &:hover {
+            color: $hover;   
+        }
     }
 }
 .skill {
