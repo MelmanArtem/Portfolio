@@ -160,6 +160,24 @@ body {
     border: none;
     cursor: pointer;
     transition: .5s;
+    &::before {
+        content: "";
+        display: block;
+        width: 0%;
+        bottom: 20%;
+        height: 2px;
+        background-color: $white;
+        position: absolute;
+        left: 14%;
+        position: absolute;
+        -webkit-transition: width .3s ease-in-out;
+        -moz--transition: width .3s ease-in-out;
+        transition: width .3s ease-in-out;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-radius: 100px;
+    }
     &::after {
         content: "";
         width: 20px;
@@ -167,7 +185,7 @@ body {
         background: url(/src/images/strelka.svg) no-repeat;
         display: block;
         position: absolute;
-        top: 2.2rem;
+        top: 2.1rem;
         left: 16rem;
     }
 }
