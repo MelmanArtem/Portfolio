@@ -154,24 +154,26 @@ body {
 .disscussion  { 
     font-size: 1.6rem;
     font-weight: 700;
-    background-color: inherit;
+    background-color: $background;
     color: $text;
     line-height: 2.4rem;
     border: none;
     cursor: pointer;
-    transition-timing-function: ease-out;
-    transition: .5s;
+    margin-left: 0;
     &::before {
         content: "";
-        width: 1px;
+        display: block;
+        position: absolute;
+        width: 0%; 
         height: 2px;
         background-color: $text;
-        display: block;
         opacity: 1;
-        position: absolute;
-        bottom: 10px;
-        left: 0;
+        bottom: 5px;
+        left: 5px;
         transition: .5s;
+    }
+    &:hover::before {
+        width: 31%;
     }
     &::after {
         content: "";
@@ -192,7 +194,7 @@ body {
     &__item1 {
         display: flex;
         gap: 2.8rem;
-        &::after {
+        &::before {
             content: "";
             position: absolute;
             width: 106px;
@@ -201,6 +203,7 @@ body {
             background: $hover;
             top: -50%;
             right: 9%;
+            transition: .5s;
         }
     }
     &__item2, &__item3 {
@@ -221,9 +224,22 @@ body {
         transition: .3s;
         text-decoration: none;
         color: $text;
-        &:hover {
-            color: $hover;   
+        line-height: 150%;
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: $white;
+            width: 100%;
+            height: 1px;
+            bottom: 0px;
+            right: 0;
+            transition: .5s;
+            transform: scaleX(0);
         }
+        &:hover::after {
+            transform: scaleX(1)
+        }
+
     }
 }
 .skill {
