@@ -76,6 +76,7 @@ body {
     }
 }
 .developer {
+    margin-bottom: 18em;
     &__image {
         position: relative;
         width: 100%;
@@ -132,7 +133,6 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3em;
-    margin-bottom: 20em;
     &_box {
         position: relative;
     }
@@ -184,6 +184,7 @@ body {
         position: absolute;
         top: 2.1rem;
         left: 16rem;
+        border-color: $hover;
     }
 }
 .social {
@@ -260,5 +261,23 @@ body {
         letter-spacing: .03em;
         line-height: 150%;
         color: $text;
+    }
+}
+.about {
+    margin-bottom: 18em;
+    &__text {
+        color: $text;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 0.84px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    &__desckription {
+        color: $text;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 150%;
     }
 }
