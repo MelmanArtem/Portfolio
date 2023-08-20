@@ -112,14 +112,7 @@ body {
             left: -11%;
             z-index: -1;
         }
-    }
-    &__prof {
-        color: $text;
-        font-size: 74px;
-        font-weight: 700;
-        margin-top: 3rem;
-        text-transform: uppercase;
-        &::before {
+        &::after {
             content:'';
             border: 36px solid transparent;
             border-bottom: 74px solid $white;
@@ -128,7 +121,55 @@ body {
             left: -13%;
         }
     }
+    &__prof {
+        color: $text;
+        font-size: 6em;
+        font-weight: 700;
+        margin-top: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+} 
+.glitch {
+    color: #fff;
+    position: relative;
+    padding: 2px;
+    &:before, &:after {
+      content: 'web-разработчик';
+      color: #fff;
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      padding: 2px;
+    }
+    &:before {
+      left: 2px;
+      text-shadow: -3px 0 red;
+      animation: glitch-before 2s linear 0s infinite alternate-reverse;
+    }
+    &:after {
+      left: -2px;
+      text-shadow: -2px  0 blue;
+      animation: glitch-after 1s linear 0s infinite alternate-reverse;
+    }
 }
+@keyframes glitch-before {
+    $steps:20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(150)+px, 750px, random(150)+px, 30px)
+        }
+    }
+}
+@keyframes glitch-after {
+    $steps:20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(150)+px, 750px, random(150)+px, 30px)
+        }
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
