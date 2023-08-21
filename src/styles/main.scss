@@ -22,7 +22,14 @@ body {
     margin: 0 auto;
     padding: 0 1.5rem;
 } 
-
+.fixed {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    background: $background;
+    width: 100%;
+    z-index: 1;
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -125,6 +132,7 @@ body {
     }
 }
 .developer {
+    margin-top: 10.1rem;
     margin-bottom: 15rem;
     &__image {
         position: relative;
