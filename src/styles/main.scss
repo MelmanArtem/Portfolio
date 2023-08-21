@@ -125,7 +125,7 @@ body {
     }
 }
 .developer {
-    margin-bottom: 15em;
+    margin-bottom: 15rem;
     &__image {
         position: relative;
         width: 100%;
@@ -172,17 +172,34 @@ body {
     }
     &__prof {
         color: $text;
-        font-size: 6em;
+        font-size: 6rem;
         font-weight: 700;
         margin-top: 2rem;
         text-transform: uppercase;
         position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0%; 
+            height: 2px;
+            background-color: $text;
+            opacity: 1;
+            bottom: 6px;
+            left: 12px;
+            transition: .5s;
+            background: linear-gradient(to left, $hover, $white 100%);
+            
+        }
+        &:hover::before {
+            width: 53.5%;
+        }
     }
 } 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3em;
+    grid-gap: 3rem;
     &_box {
         position: relative;
     }
@@ -204,7 +221,7 @@ body {
         grid-column: 2 / 3;
     }
     &_steps {
-        row-gap: 1em;
+        row-gap: 1rem;
         align-items: center
     }
 }
@@ -303,50 +320,69 @@ body {
 .skill {
     display: flex;
     justify-content: space-between;
-    gap: 4em;
+    gap: 4rem;
     &__name {
         font-size: 1.6rem;
         font-weight: 700;
         line-height: 150%;
         text-transform: uppercase;
         color: $text;
-        margin-bottom: 1.5em;
+        margin-bottom: 1.5rem;
     }
     &__desckription {
         font-size: 1.4rem;
-        letter-spacing: .03em;
+        letter-spacing: .03rem;
         line-height: 150%;
         color: $text;
     }
 }
 .about {
-    margin-bottom: 15em;
+    margin-bottom: 18rem;
     &__text {
         color: $text;
-        font-size: 1.8em;
+        font-size: 1.8rem;
         font-weight: 700;
         line-height: 150%;
-        letter-spacing: 0.84px;
         text-transform: uppercase;
-        margin: 0;
     }
     &__desckription {
         color: $text;
-        font-size: 1.8em;
+        font-size: 1.8rem;
         font-weight: 400;
         line-height: 150%;
     }
 }
 .steps {
-    margin-bottom: 15em;
+    margin-bottom: 18rem;
     &__text {
         color: $text;
-        font-size: 28px;
+        font-size: 2.8rem;
         font-weight: 400;
     }
     &__info {
         color: $text;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 400;
+    }
+    &_one::before {
+        content: "01";
+        width: 1px;
+        height: 24px;
+        color: $text;
+        margin-right: 4rem;
+    }
+    &_two::before {
+        content: "02";
+        width: 1px;
+        height: 24px;
+        color: $text;
+        margin-right: 4rem;
+    }
+    &_three::before {
+        content: "03";
+        width: 1px;
+        height: 24px;
+        color: $text;
+        margin-right: 4rem;
     }
 }
