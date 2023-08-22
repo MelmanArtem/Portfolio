@@ -16,7 +16,13 @@ body {
     font-family: $font-inter;
     background-color: $background;
 }
-
+p, ul {
+    color: $text;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+}
 .container {
     max-width: 114rem;
     margin: 0 auto;
@@ -25,10 +31,12 @@ body {
 .fixed {
     position: fixed;
     top: 0px;
+    left: 0;
     right: 0;
-    background: $background;
     width: 100%;
     z-index: 1;
+    height: 110px;
+    background: linear-gradient(180deg, $hover 75%, rgba(20, 20, 22, 0) 100%);
 }
 .header {
     display: flex;
@@ -49,9 +57,6 @@ body {
         color: $text;
         transition: 0.5s;
         position: relative;
-        &:hover {
-            color: $hover;
-        }
         &::after {
             content: "";
             position: absolute;
@@ -65,7 +70,6 @@ body {
         }
         &:hover::after {
             transform: scaleX(1);
-            background-color: $hover;
         }
     }
     &__contact {
@@ -78,16 +82,13 @@ body {
         margin-right: 1rem;
         transition: 0.4s;
         position: relative;
-        &:hover {
-            color: $hover;
-        }
         &::before {
             content: "";
             display: block;
             position: absolute;
             width: 0%; 
             height: 1px;
-            background-color: $hover;
+            background-color: $text;
             opacity: 1;
             bottom: 0px;
             right: 0px;
@@ -111,15 +112,12 @@ body {
             opacity: 0.5;
             border: 1px solid $text;
         }
-        &:hover {
-            color: $hover;
-        }
         &::after {
             content: "";
             position: absolute;
             width: 0%; 
             height: 1px;
-            background-color: $hover;
+            background-color: $text;
             opacity: 1;
             bottom: 0px;
             right: 0px;
@@ -185,10 +183,10 @@ body {
         margin-top: 2rem;
         text-transform: uppercase;
         position: relative;
+        display: inline-block;
         &::before {
             content: "";
             position: absolute;
-            display: block;
             width: 0%; 
             height: 2px;
             background-color: $text;
@@ -200,16 +198,17 @@ body {
             
         }
         &:hover::before {
-            width: 53.5%;
+            width: 98%;
         }
     }
 } 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3rem;
+    grid-gap: 6rem 3rem;
     &_box {
         position: relative;
+        grid-row: 6rem;
     }
     &__item1, &__item2 {
         display: flex;
@@ -225,12 +224,25 @@ body {
         height: 1px;
         background: $text;
     }
+    &__line_one {
+        grid-column: 1 / 4;
+        width: 100%;
+        height: 1px;
+        background: $text;
+    }
     &__about5 {
         grid-column: 2 / 3;
     }
     &_steps {
         row-gap: 1rem;
         align-items: center
+    }
+    &__portfolio {
+        margin: 5rem 0;
+        position: relative;
+    }
+    &__customization_one {
+        grid-column: 1 / 4;
     }
 }
 .disscussion  { 
@@ -250,7 +262,7 @@ body {
         height: 1px;
         background-color: $text;
         opacity: 1;
-        bottom: 12px;
+        bottom: 0px;
         left: 5px;
         transition: .5s;
     }
@@ -264,7 +276,7 @@ body {
         background: url(/src/images/strelka.svg) no-repeat;
         display: block;
         position: absolute;
-        top: 2.1rem;
+        top: .9rem;
         left: 16rem;
         border-color: $hover;
     }
@@ -284,7 +296,7 @@ body {
             height: 106px;
             border-radius: 50%;
             background: $hover;
-            top: -50%;
+            top: -150%;
             right: 9%;
             transition: .5s;
         }
@@ -401,7 +413,7 @@ body {
         content: '';
         display: block;
         width: 100%;
-        height: 785px;
+        height: 900px;
         position: absolute;
         top: 230px;
         left: 0;
@@ -415,7 +427,7 @@ body {
         font-weight: 700;
         text-transform: uppercase;
         position: relative;
-        margin-bottom: 20.5rem;
+        margin-bottom: 20rem;
         &::after {
             content: '';
             width: 465px;
@@ -423,9 +435,49 @@ body {
             border-radius: 50%;
             background: $hover;
             position: absolute;
-            top: -135%;
+            top: -130%;
             right: 28%;
             z-index: -1;
         }
+    }
+    &__name {
+        color: $text;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 150%;
+        margin: 0;
+    }
+    &__list {
+        margin: 4rem 0;
+        padding-left: 0;
+        list-style-type: none;
+    }
+    &__time {
+        font-weight: 700;
+    }
+    &__photo {
+        width: 100%;
+        height: 315px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: -1;
+    }
+    &_img {
+        margin: 0;
+    }
+}
+.customization {
+    margin-bottom: 18rem;
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8rem;
+    }
+    &__title {
+        max-width: 870px;
+        font-size: 2.8rem;
     }
 }
