@@ -525,15 +525,21 @@ h4 {
         align-self: center;
         &_item {
             align-self: center;
+            position: relative;
         }
     }
     &__img {
         background-repeat: no-repeat;
         background-position: center;
         display: block;
-        width: 77px;
+        width: 105px;
         height: 84px;
         margin: 0 auto;
+        filter: grayscale(1);
+        transition: .4s;
+        &:hover {
+            filter: grayscale(0);
+        }
         &_html {
             background-image: url(../images/html5\ 1.svg);
         }
@@ -557,6 +563,21 @@ h4 {
         }
         &_wp {
             background-image: url(../images/Wordpress-Logo\ 1.svg);
+        }
+    }
+    &__text {
+        margin: 0.5rem 1rem;
+        background: #d40000;
+        max-width: 200px;
+        position: absolute;
+        z-index: 2;
+        padding: 0rem 1.5rem;
+        transition: 0.3s;
+        transform: scale(0.1);
+        left: 6%;
+        top: 20%;
+        &:hover {
+            transform: scale(1); 
         }
     }
 }
