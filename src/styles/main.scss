@@ -16,6 +16,10 @@ body {
     font-family: $font-inter;
     background-color: $background;
 }
+ul, li {
+    list-style-type: none;
+    padding: 0;
+}
 p, ul {
     color: $text;
     font-size: 1.6rem;
@@ -518,5 +522,41 @@ h4 {
     &__grid {
         display: grid;
         grid:  14.8rem 14.8rem / 1fr 1fr 1fr 1fr;
+        align-self: center;
+        &_item {
+            align-self: center;
+        }
+    }
+    &__img {
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        width: 77px;
+        height: 84px;
+        margin: 0 auto;
+        &_html {
+            background-image: url(../images/html5\ 1.svg);
+        }
+        &_css {
+            background-image: url(../images/css-logo\ 1.svg);
+        }
+        &_js {
+            background-image: url(../images/Unofficial_JavaScript_logo_2\ 1.svg);
+        }
+        &_jq {
+            background-image: url(../images/jquery\ 1.svg);
+        }
+        &_bs {
+            background-image: url(../images/bootstrap\ 1.svg);
+        }
+        &_php {
+            background-image: url(../images/php.svg);
+        }
+        &_vue {
+            background-image: url(../images/Vue.js_Logo_2\ 1.svg);
+        }
+        &_wp {
+            background-image: url(../images/Wordpress-Logo\ 1.svg);
+        }
     }
 }
