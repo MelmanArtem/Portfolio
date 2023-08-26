@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 $text: #F3F2F0;
 $hover: #D40000;
@@ -251,6 +251,10 @@ h4 {
     &__customization_one {
         grid-column: 1 / 4;
     }
+    &__customization {
+        padding-left: 8rem;
+        width: 78%;
+    }
 }
 .disscussion  { 
     font-size: 1.6rem;
@@ -482,6 +486,24 @@ h4 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 6rem;
+        &_icon1 {
+            background: url(/src/images/money.svg) no-repeat left center/40px;
+        }
+        &_icon2 {
+            background: url(/src/images/image.svg) no-repeat left center/40px;
+        }
+        &_icon3 {
+            background: url(/src/images/time.svg) no-repeat left center/40px;
+        }
+        &_icon4 {
+            background: url(/src/images/telephone.svg) no-repeat left center/40px;
+        }
+        &_icon5 {
+            background: url(/src/images/mdi_code-json.svg) no-repeat left center/40px;
+        }
+        &_icon6 {
+            background: url(/src/images/file\ 1.svg) no-repeat left center/40px;
+        }
     }
     &__title {
         max-width: 870px;
