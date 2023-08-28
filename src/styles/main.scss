@@ -522,10 +522,18 @@ h4 {
     &__grid {
         display: grid;
         grid:  14.8rem 14.8rem / 1fr 1fr 1fr 1fr;
-        align-self: center;
+        border: 1px solid $white;
         &_item {
-            align-self: center;
+            display: flex;
+            align-items: center;
+            border: 1px solid $white;
+            filter: grayscale(.7);
+            transition: .4s;
+            cursor: pointer;
             position: relative;
+            &:hover {
+                filter: grayscale(0);
+            }
         }
     }
     &__img {
@@ -535,11 +543,6 @@ h4 {
         width: 105px;
         height: 84px;
         margin: 0 auto;
-        filter: grayscale(1);
-        transition: .4s;
-        &:hover {
-            filter: grayscale(0);
-        }
         &_html {
             background-image: url(../images/html5\ 1.svg);
         }
@@ -566,18 +569,34 @@ h4 {
         }
     }
     &__text {
-        margin: 0.5rem 1rem;
-        background: #d40000;
-        max-width: 200px;
+        margin: 0 auto;
+        background: $hover;
+        max-width: 286px;
         position: absolute;
-        z-index: 2;
-        padding: 0rem 1.5rem;
+        top: 10%;
+        left: 0%;
+        z-index: 1;
+        padding: 1.9rem 2.5rem;
         transition: 0.3s;
-        transform: scale(0.1);
-        left: 6%;
-        top: 20%;
-        &:hover {
-            transform: scale(1); 
+        transform: scale(1);
+        &::before {
+          content: '';
+          border: 7px solid $background;
+          border-bottom: 7px solid $hover;
+          position: absolute;
+          top: -10%;
+          left: 50%;
+          transform: translate(-50%);
         }
+        &:hover::before {
+            transform: scale(1);
+        }
+    }
+    &__description {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+        opacity: 0.8;
     }
 }
