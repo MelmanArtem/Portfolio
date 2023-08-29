@@ -519,6 +519,7 @@ h4 {
 }
 .technologies {
     margin-bottom: 18rem;
+    z-index: 0;
     &__grid {
         display: grid;
         grid:  14.8rem 14.8rem / 1fr 1fr 1fr 1fr;
@@ -528,7 +529,7 @@ h4 {
             align-items: center;
             border: 1px solid $white;
             filter: grayscale(.7);
-            transition: .4s;
+            transition: .3s;
             cursor: pointer;
             position: relative;
             &:hover {
@@ -545,6 +546,7 @@ h4 {
         margin: 0 auto;
         &_html {
             background-image: url(../images/html5\ 1.svg);
+            z-index: -1;
         }
         &_css {
             background-image: url(../images/css-logo\ 1.svg);
@@ -569,27 +571,25 @@ h4 {
         }
     }
     &__text {
-        margin: 0 auto;
         background: $hover;
-        max-width: 286px;
+        max-width: 192px;
         position: absolute;
-        top: 10%;
-        left: 0%;
-        z-index: 1;
-        padding: 1.9rem 2.5rem;
-        transition: 0.3s;
-        transform: scale(1);
-        &::before {
-          content: '';
-          border: 7px solid $background;
-          border-bottom: 7px solid $hover;
-          position: absolute;
-          top: -10%;
-          left: 50%;
-          transform: translate(-50%);
-        }
-        &:hover::before {
+        top: 90%;
+        left: 12.5%;
+        padding: 1rem;
+        transition: .3s;
+        z-index:2;
+        transform: scale(0.1);
+        &:hover {
             transform: scale(1);
+        }
+        &::before {
+            content: "";
+            border: 7px solid $background;
+            border-bottom: 7px solid $hover;
+            position: absolute;
+            top: -11.5%;
+            left: 47%;
         }
     }
     &__description {
