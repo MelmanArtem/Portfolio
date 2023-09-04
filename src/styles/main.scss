@@ -524,6 +524,7 @@ h4 {
         display: grid;
         grid:  14.8rem 14.8rem / 1fr 1fr 1fr 1fr;
         border: 1px solid $white;
+        position: relative;
         &_item {
             display: flex;
             align-items: center;
@@ -540,13 +541,12 @@ h4 {
     &__img {
         background-repeat: no-repeat;
         background-position: center;
-        display: block;
+        display: inline-block;
         width: 105px;
         height: 84px;
         margin: 0 auto;
         &_html {
             background-image: url(../images/html5\ 1.svg);
-            z-index: -1;
         }
         &_css {
             background-image: url(../images/css-logo\ 1.svg);
@@ -570,33 +570,66 @@ h4 {
             background-image: url(../images/Wordpress-Logo\ 1.svg);
         }
     }
-    &__text {
-        background: $hover;
-        max-width: 192px;
+    &__tooltipUP {
+        position: absolute;
+        display:block;
+        width: 100%;
+        height: 100%;
+    }
+    &__tooltipUP &__tooltiptextUP {
+        visibility: hidden;
+        max-width: 270px;
+        background-color: $hover;
+        color: $text;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        top: -80%;
+        right: 2%;
+    }
+    &__tooltipUP &__tooltiptextUP::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $hover transparent transparent transparent;
+    }
+    &__tooltipUP:hover &__tooltiptextUP {
+        visibility: visible;
+    }
+    &__tooltipDown {
+        position: absolute;
+        display:block;
+        width: 100%;
+        height: 100%;
+    }
+    &__tooltipDown &__tooltiptextDown {
+        visibility: hidden;
+        width: 270px;
+        background-color: $hover;
+        color: $text;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
         position: absolute;
         top: 90%;
-        left: 12.5%;
-        padding: 1rem;
-        transition: .3s;
-        z-index:2;
-        transform: scale(0.1);
-        &:hover {
-            transform: scale(1);
-        }
-        &::before {
-            content: "";
-            border: 7px solid $background;
-            border-bottom: 7px solid $hover;
-            position: absolute;
-            top: -11.5%;
-            left: 47%;
-        }
+        right: 1%;
     }
-    &__description {
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.5;
-        text-align: center;
-        opacity: 0.8;
+    &__tooltipDown &__tooltiptextDown::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 49.5%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent $hover transparent;
+    }
+    &__tooltipDown:hover &__tooltiptextDown {
+        visibility: visible;
     }
 }
