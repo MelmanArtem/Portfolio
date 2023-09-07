@@ -659,8 +659,94 @@ h4 {
         margin-bottom: 4rem;
         margin-left: 2rem;
     }
-    &__price {
+    &__price1, &__price2, &__price3 {
         font-weight: 700;
         font-size: 4.2rem;
     }
+    &__price1 {
+        &::before {
+            content: "";
+            display: block;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: $hover;
+            position: absolute;
+            top: 36%;
+            right: 45.5%;
+            z-index: -1;
+        }
+    }
+    &__price3 {
+        &::before {
+            content: "";
+            display: block;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: $hover;
+            position: absolute;
+            bottom: -1%;
+            right: 45.5%;
+            z-index: -1;
+        }
+    }
+    &__disscussion1, &__disscussion2, &__disscussion3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        background-color: $background;
+        color: $text;
+        line-height: 2.4rem;
+        border: none;
+        cursor: pointer;
+        margin-left: 0;
+    }
+    &__disscussion1 {
+        &::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(/src/images/strelka.svg) no-repeat;
+            display: block;
+            position: absolute;
+            top: 39.8%;
+            left: 20%;
+            border-color: $hover;
+        }
+    }
+    &__disscussion2 {
+        &::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(/src/images/strelka.svg) no-repeat;
+            display: block;
+            position: absolute;
+            bottom: 29.8%;
+            left: 20%;
+            border-color: $hover;
+        }
+    }
+    &__disscussion3 {
+        &::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(/src/images/strelka.svg) no-repeat;
+            display: block;
+            position: absolute;
+            bottom: .9%;
+            left: 20%;
+            border-color: $hover;
+        }
+    }
 }
+.form {
+    position: relative;
+    margin-bottom: 13rem;
+    &__contact-box {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
