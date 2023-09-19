@@ -261,6 +261,9 @@ h4 {
         padding-left: 8rem;
         width: 78%;
     }
+    &_tariffication {
+        position: relative;
+    }
 }
 .disscussion  { 
     font-size: 1.6rem;
@@ -635,6 +638,20 @@ h4 {
 .tariffication {
     position: relative;
     margin-bottom: 15rem;
+    &__text {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #D40000;
+            top: -126%;
+            left: -13%;
+            z-index: -1;
+        } 
+    }
     &__develop {
         color: $text;
         font-size: 2.8rem;
@@ -663,7 +680,7 @@ h4 {
         font-weight: 700;
         font-size: 4.2rem;
     }
-    &__price1 {
+    &__price1, &__price3 {
         &::before {
             content: "";
             display: block;
@@ -672,22 +689,8 @@ h4 {
             border-radius: 50%;
             background: $hover;
             position: absolute;
-            top: 36%;
-            right: 45.5%;
-            z-index: -1;
-        }
-    }
-    &__price3 {
-        &::before {
-            content: "";
-            display: block;
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: $hover;
-            position: absolute;
-            bottom: -1%;
-            right: 45.5%;
+            top: 68%;
+            left: -8%;
             z-index: -1;
         }
     }
@@ -700,46 +703,17 @@ h4 {
         border: none;
         cursor: pointer;
         margin-left: 0;
-    }
-    &__disscussion1 {
         &::after {
             content: "";
             width: 20px;
             height: 20px;
             background: url(/src/images/strelka.svg) no-repeat;
-            display: block;
             position: absolute;
-            top: 39.8%;
-            left: 20%;
+            bottom: 5%;
+            left: 30%;  
             border-color: $hover;
         }
-    }
-    &__disscussion2 {
-        &::after {
-            content: "";
-            width: 20px;
-            height: 20px;
-            background: url(/src/images/strelka.svg) no-repeat;
-            display: block;
-            position: absolute;
-            bottom: 29.8%;
-            left: 20%;
-            border-color: $hover;
-        }
-    }
-    &__disscussion3 {
-        &::after {
-            content: "";
-            width: 20px;
-            height: 20px;
-            background: url(/src/images/strelka.svg) no-repeat;
-            display: block;
-            position: absolute;
-            bottom: .9%;
-            left: 20%;
-            border-color: $hover;
-        }
-    }
+    }  
 }
 .form {
     position: relative;
