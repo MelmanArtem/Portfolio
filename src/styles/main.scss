@@ -4,6 +4,7 @@ $text: #F3F2F0;
 $hover: #D40000;
 $background: #232326;
 $white:#FFFFFF;
+$textColor: #010101;
 
 $font-inter:'Inter', sans-serif;
 
@@ -18,6 +19,7 @@ body {
 }
 ul, li {
     padding: 0;
+    list-style-type: none;
 }
 p, ul {
     color: $text;
@@ -646,7 +648,7 @@ h4 {
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            background: #D40000;
+            background: $hover;
             top: -126%;
             left: -13%;
             z-index: -1;
@@ -728,60 +730,60 @@ h4 {
         font-weight: 400;
         margin-top: 2rem;
         margin-bottom: 1rem;
+        opacity: 0.8;
     }
     &__card_input {
-        color: $text;
         font-size: 1.2rem;
-        font-weight: 400;
-        opacity: 0.2;
-        padding: 2.3rem 2rem ;
+        padding: 2.3rem 2rem;
+        border: 1px solid black;
+        opacity: 0.1;
+        background: $text;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 }
-
 .dropdown {
     position: relative;
-    margin-bottom: 4rem;
-    &__link {
-      display: block;
-      font-size: 1.2rem;
-      color: $white;
-      width: 100%;
-      background: rgba(1, 1, 1, 0.05);
-      padding: 2.4rem 2rem;
-      text-align: start;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    margin-bottom: 3rem;
+    &__btn {
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+        width: 100%;
+        opacity: 0.1;
+        background: $text;
+        padding: 2.4rem 2rem;
+        text-align: start;
     }
     &__arrow {
-      display: block;
-      position: absolute;
-      background: url(../images/drop.svg);
-      background-repeat: no-repeat;
-      width: 12px;
-      height: 7px;
-      top: 54%;
-      right: 24px;
-      transform: translateY(-50%);
-      pointer-events: none;
-      transition: 0.3s ease-in-out;
+        display: block;
+        position: absolute;
+        background: url(/src/images/arrow.svg) no-repeat;
+        width: 1.2rem;
+        height: .8rem;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: 0.3s ease-in-out;
     }
     &__list {
-      width: 100%;
-      background-color: #e7e6e4;
-      position: absolute;
-      display: none;
-      transition: 0.3s ease-in-out;
+        width: 100%;
+        background-color: #e7e6e4;
+        position: absolute;
+        display: none;
+        transition: 0.3s ease-in-out;
     }
     &__item {
-      font-size: 1.2rem;
-      color: $hover;
-      padding: 0 0 2rem 2rem;
-      transition: 0.3s;
-      cursor: pointer;
-      &:hover {
-        color: $white;
-      }
+        font-size: 1.2rem;
+        color: rgba($textColor, 0.4);
+        padding: 0 0 2rem 2rem;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          color: $textColor;
+        }
     }
     &__input-hidden {
       display: none;
@@ -790,11 +792,12 @@ h4 {
   
 .arrow-active {
     transform: rotate(180deg);
-    top: 48%;
+    top: 42%;
 } 
+
 .dropdown-menu {
     &_visible {
-      display: block;
+        display: block;
     }
 }
 .dropdown.active {
