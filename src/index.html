@@ -414,18 +414,24 @@
                         <label class="feedback__card_label">Телефон или почта</label>
                         <input class="feedback__card_input" type="text" maxlength="30" autofocus="autofocus" required autocomplete="on" placeholder="Введите телефон">
                         <label class="feedback__card_label">Выберите удобный способ связи</label>
-                        <div class="dropdown">
-                            <button type="button" class="dropdown__btn">Telegram</button>
-                            <span class="dropdown__arrow"></span>
-                            <ul class="dropdown__list dropdown-menu">
-                               <li class="dropdown__item">WhatsApp</li>
-                               <li class="dropdown__item">Viber</li>
-                               <li class="dropdown__item">Звонок на телефон</li>
-                               <li class="dropdown__item">SMS сообщение</li>
+                        <label class="drop">
+                            <input type="checkbox" id="target-drop-example"> <!-- Toggle Drop -->
+                            <span class="control">Telegram</span> <!-- Fake button -->
+                            <!-- Items -->
+                            <ul class="drop-items">
+                                <li class="item-drop">
+                                    <a target="_blank" href="https://codepen.io/robsonklein23">WhatsApp</a></li>
+                                <li class="item-drop">
+                                    <a target="_blank" href="https://www.behance.net/robsonklein">Viber</a></li>
+                                <li class="item-drop">
+                                    <a target="_blank" href="https://www.linkedin.com/in/robsonklein/">Звонок на телефон</a></li>
+                                <li class="item-drop">
+                                    <a target="_blank" href="https://www.behance.net/robsonklein">СМС сообщение</a></li>
                             </ul>
-                            <input class="dropdown__input-hidden" type="text" name="select" value="">
-                         </div>
-                        <button type="submit" class="form__btn">Отправить</button>
+                            <!-- Alternative to close dropdown with click out -->
+                            <label for="target-drop-example" class="overlay-close"></label>
+                        </label> 
+                        <button type="submit" class="feedback__btn">Отправить</button>
                     </form>  
                 </div>
             </div>
@@ -433,4 +439,3 @@
     </section>
 </body>
 </html>
-
