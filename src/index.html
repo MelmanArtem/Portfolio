@@ -7,7 +7,7 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <header>
+    <header id="headerTop">
         <div class="fixed">
             <div class="container">
                 <div class="header">
@@ -206,8 +206,8 @@
                     </ul>
                     <p class="portfolio__time">Затрачено времени: 5 рабочих дней</p>
                 </div>
-                <div class="grid__portfolio portfolio_img">
-                    <img class="portfolio__photo" src="images/agata.svg" alt="photo">
+                <div class="grid__portfolio">
+                    <a href="https://melmanartem.github.io/Module01-Gym/index.html"><img class="portfolio__photo" src="images/agata.svg" alt="photo"></a>
                 </div>
                 <div class="grid__line"></div>
                 <div class="grid__portfolio">
@@ -220,7 +220,7 @@
                     <p class="portfolio__time">Затрачено времени: 7 рабочих дней</p>
                 </div>
                 <div class="grid__portfolio">
-                    <img class="portfolio__photo" src="images/lemon.svg" alt="photo">
+                    <a href="https://melmanartem.github.io/Module02-Shop/dist/"><img class="portfolio__photo" src="images/lemon.svg" alt="photo"></a>
                 </div>
                 <div class="grid__line"></div>
             </div>
@@ -478,5 +478,51 @@
             </div>
         </div>
     </section>
+    <a href="#headerTop" class="button-up hidden" id="btnUp">Наверх</a>
+    <script>
+        
+        // Smooth Scroll 
+        const links = document.querySelectorAll(".banner-link");
+        for (const link of links) {
+            link.addEventListener("click", clickHandler);
+        }
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+            document.querySelector(href).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        // Button Up
+        window.onscroll = function(){scrollFunction()};
+        const upbuttons = document.querySelectorAll(".button-up");
+        for (const upbutton of upbuttons) {
+            upbutton.addEventListener("click", clickHandler);
+        }
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+
+            document.querySelector(href).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+        function scrollFunction(){
+            if ( document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500){
+                document.getElementById('btnUp').className = 'button-up visible';
+            } else {
+                document.getElementById('btnUp').className = 'button-up hidden';
+            }
+        }
+
+        //Menu
+        function openModal() {
+           document.getElementById("modal").style.top = "0px";
+        }
+       function closeModal() {
+           document.getElementById("modal").style.top = "-400px";
+        }
+    </script>
 </body>
 </html>

@@ -490,10 +490,6 @@ h4 {
         top: 50%;
         transform: translate(-50%, -50%);
         object-fit: cover;
-        z-index: -1;
-    }
-    &_img {
-        margin: 0;
     }
 }
 .customization {
@@ -868,4 +864,29 @@ h4 {
         font-size: 1.2rem;
         opacity: 0.3;
     }
+}
+// Button UP
+.button-up {
+    background-color: $color-primary-drop;
+    color: $background;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 20px;
+    position: fixed;
+    bottom: 10rem;
+    right: 15rem;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+.button-up:hover {
+    background-color: $hover;
+    color: $text;
+}
+.button-up.hidden {
+    opacity: 0;
+}
+.button-up.visible {
+    opacity: 1;
 }
