@@ -144,6 +144,9 @@ h4 {
             background-color: $hover;
         }
     }
+    &__burger {
+        display: none;
+    }
 }
 .developer {
     margin-top: 10rem;
@@ -303,9 +306,15 @@ h4 {
         background: url(/src/images/strelka.svg) no-repeat;
         display: block;
         position: absolute;
-        top: .9rem;
+        top: .8rem;
         left: 16rem;
-        border-color: $hover;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        &::after:hover {
+            transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
     }
 }
 .social {
@@ -846,7 +855,7 @@ h4 {
     pointer-events:none;
     }
 }
-//footer
+//Footer
 .footer {
     &__header {
         margin-top: 0rem;
@@ -865,18 +874,19 @@ h4 {
         opacity: 0.3;
     }
 }
+
 // Button UP
 .button-up {
+    position: fixed;
     background-color: $color-primary-drop;
     color: $background;
     font-weight: 600;
     font-size: 1.4rem;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 5px 20px;
-    position: fixed;
+    padding: 7px 20px 5px 20px;
     bottom: 10rem;
-    right: 15rem;
+    right: 10rem;
     border-radius: 5px;
     transition: 0.4s;
 }
@@ -890,3 +900,116 @@ h4 {
 .button-up.visible {
     opacity: 1;
 }
+
+//Modal
+.burger {
+    width: 34px;
+    height: 22px;
+    background-image: url(../images/burger.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.modal {
+    background-color: $background;
+    max-width: 500px;
+    text-align: center;
+    position: absolute;
+    top: -400px;
+    left: 0;
+    right: 0;
+    margin: 20px auto 0;
+    padding: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    z-index: 1;
+}
+.modal .header-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 23px;
+    margin: 0;
+}
+.header-nav a {
+    color: $text;
+    text-decoration: none;
+}
+.burger-close {
+    width: 22px;
+    height: 22px;
+    background: url(../images/popclose.svg);
+    background-color: transparent;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+//Popup
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+}
+.context {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    padding: 0 15px;
+  } 
+.popup-form {
+    width: 60rem;
+    background: $background;
+    margin: auto;
+    overflow: auto;
+    position: relative;
+    overflow: visible;
+}
+.feedback-form {
+    padding: 6.5rem 3rem 10rem;
+    &__wrapper {
+      border-bottom: 1px solid $white;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    &__title {
+        color: $text;
+        font-weight: 700;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+    &__text {
+      font-size: 1.6rem;
+      margin: 0 auto 3rem;
+      max-width: 360px;
+    }
+}
+.popup-close {
+    background: url(../images/popclose.svg) no-repeat center / cover;
+    width: 1.8rem;
+    height: 1.8rem;
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    border: none;
+    cursor: pointer;
+}
+//Burger 
