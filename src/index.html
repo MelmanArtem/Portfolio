@@ -10,34 +10,43 @@
     <header id="headerTop">
         <div class="fixed">
             <div class="container">
-                <div class="header">
-                    <nav>
-                        <ul class="header__nav">
-                            <li class="header__item">
-                                <a href="#" class="header__link">Обо мне</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#" class="header__link">Портфолио</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#" class="header__link">Этапы работ</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#" class="header__link">Цены</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#" class="header__link">Обратная связь</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="header__contact">
-                        <a href="tel:+79263806245" class="header__tel">+7 926 380 62 45</a>
-                        <a href="mailto:melman69rus@gmail.com" class="header__mail">melman69rus@gmail.com</a>
+                <div class="header-desktop">
+                    <div class="header">
+                        <nav>
+                            <ul class="header__nav">
+                                <li class="header__item">
+                                    <a href="#" class="header__link">Обо мне</a>
+                                </li>
+                                <li class="header__item">
+                                    <a href="#" class="header__link">Портфолио</a>
+                                </li>
+                                <li class="header__item">
+                                    <a href="#" class="header__link">Этапы работ</a>
+                                </li>
+                                <li class="header__item">
+                                    <a href="#" class="header__link">Цены</a>
+                                </li>
+                                <li class="header__item">
+                                    <a href="#" class="header__link">Обратная связь</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="header__contact">
+                            <a href="tel:+79263806245" class="header__tel">+7 926 380 62 45</a>
+                            <a href="mailto:melman69rus@gmail.com" class="header__mail">melman69rus@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="header__burger">
-                        <button class="burger" onclick="openModal()"></button>
+                </div> 
+                <div class="header-mobile">
+                    <div class="mob-menu">
+                        <div class="mob-menu__item">
+                            <a href="tel:+79263806245" class="mob-menu__tel">+7 926 380 62 45</a>
+                        </div>
+                        <div class="mob-menu__item">
+                            <button class="mob-menu__burger" onclick="openModal()"></button>
+                        </div>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>  
     </header>
@@ -521,7 +530,7 @@
            document.getElementById("modal").style.top = "-400px";
         }
     </script>
-
+    
     <div class="popup" data-modal="project">
         <div class="context">
             <div class="popup-form">

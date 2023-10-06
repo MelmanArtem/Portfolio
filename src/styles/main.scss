@@ -49,13 +49,27 @@ h4 {
 } 
 .fixed {
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 0;
-    right: 0;
+    padding: 0rem 0;
     width: 100%;
     z-index: 1;
-    height: 100px;
-    background: linear-gradient(180deg, $background 100%, rgba(20, 20, 22, 0) 100%);
+    background: $background;
+    @media (max-width: $tab) {
+        padding: 4rem 0;
+    }
+}
+.header-desktop {
+    display: block;
+    @media (max-width: $tab) {
+        display: none;
+    }
+}
+.header-mobile {
+    display: none;
+    @media (max-width: $tab) {
+        display: block;
+    }
 }
 .header {
     display: flex;
@@ -71,9 +85,6 @@ h4 {
         margin: 0;
         padding-left: 0;
         gap: 5rem;
-        @media (max-width: $desk) {
-            display: none;
-        }
     }
     &__link {
         text-decoration: none;
@@ -99,9 +110,6 @@ h4 {
     &__contact {
         display: flex;
         line-height: 150%;
-        @media (max-width: $tab) {
-            display: none;
-        }
     }
     &__tel {
         text-decoration: none;
@@ -133,6 +141,9 @@ h4 {
         margin-left: 1rem;
         transition: 0.4s;
         position: relative;
+        @media (max-width: $desk) {
+            display: none;
+        }
         &::before {
             content: '';
             position: relative;
@@ -157,11 +168,14 @@ h4 {
             background-color: $hover;
         }
     }
-    &__burger {
-        display: none;
-        @media (max-width: $tab) {
-            display: block;
-        }
+}
+.mob-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__tel {
+        text-decoration: none;
+        color: $text; 
     }
 }
 .developer {
@@ -922,7 +936,7 @@ h4 {
 }
 
 //Modal
-.burger {
+.mob-menu__burger {
     width: 34px;
     height: 22px;
     background-image: url(../images/burger.svg);
