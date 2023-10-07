@@ -531,6 +531,17 @@ h4 {
     display: flex;
     justify-content: space-between;
     gap: 4rem;
+    &__item {
+        @media (max-width: $desk) {
+            max-width: 35rem;
+        }
+        @media (max-width: $tab) {
+            max-width: 22rem;
+        }
+        @media (max-width: $min_mob) {
+            max-width: 18rem;
+        } 
+    }
     &__name {
         font-size: 1.6rem;
         font-weight: 700;
