@@ -24,6 +24,9 @@ body {
     font-family: $font-inter;
     background-color: $background;
 }
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 ul, li {
     padding: 0;
     list-style-type: none;
@@ -43,17 +46,18 @@ h4 {
     margin: 0;
 }
 .container {
-    max-width: 114rem;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 15px;
 } 
 .fixed {
     position: fixed;
     top: 0;
-    left: 0;
-    padding: 0rem 0;
+    right: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
+    padding: .2rem 0;
+    margin: 0 auto;
     background: $background;
     @media (max-width: $tab) {
         padding: 3.8rem 0;
@@ -183,9 +187,11 @@ h4 {
     margin-bottom: 18rem;
     @media (max-width: $tab) {
         margin-top: 7rem;
+        margin-bottom: 10rem;
     }
     @media (max-width: $min_mob) {
         margin-top: 5rem;
+        margin-bottom: 8rem;
     }
     &__image {
         width: 100%;
@@ -332,6 +338,7 @@ h4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 6rem 3rem;
+    align-content: center;
     @media (max-width: $desk) {
         row-gap: 4rem;
     }
@@ -370,8 +377,27 @@ h4 {
         height: 1px;
         background: $text;
     }
+    &__about1 {
+        @media (max-width: $min_mob) {
+            grid-column: 1 / 3;
+        }
+    }
+    &__about2 {
+        @media (max-width: $min_mob) {
+            grid-column: 1 / 3;
+        }
+    }
+    &__about4 {
+        grid-column: 1 / 2;
+        @media (max-width: $tab) {
+            grid-column: 1 / 3;
+        }
+    }
     &__about5 {
         grid-column: 2 / 3;
+        @media (max-width: $tab) {
+            grid-column: 1 / 3;
+        }
     }
     &_steps {
         row-gap: 1rem;
@@ -380,6 +406,9 @@ h4 {
     &__portfolio {
         margin: 5rem 0;
         position: relative;
+        @media (max-width: $tab) {
+            grid-column: 1 / 3;
+        }
     }
     &__customization_one {
         grid-column: 1 / 4;
@@ -409,7 +438,7 @@ h4 {
         font-size: 1.4rem;
     }
     @media (max-width: $min_mob) {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     &::before {
         content: "";
@@ -446,10 +475,11 @@ h4 {
         }
         @media (max-width: $min_mob) {
             font-size: 2.8rem;
-        }
-        @media (max-width: $min_mob) {
-            left: 12rem;
+            left: 11rem;
             top: .7rem;
+            width: 12px;
+            height: 10px;
+            background: url(/src/images/mobile-button.svg) no-repeat;
         }
         &::after:hover {
             transform: rotate(360deg);
@@ -459,9 +489,15 @@ h4 {
 }
 .social {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 2.8rem;
     list-style-type: none;
+    @media (max-width: $tab) {
+        gap: 1.8rem;
+    }
+    @media (max-width: $min_mob) {
+        gap: .9rem;
+    }
     &__item1 {
         display: flex;
         gap: 2.8rem;
@@ -489,11 +525,14 @@ h4 {
             @media (max-width: $min_mob) {
                 width: 60px;
                 height: 60px;
+                top: -84%;
+                right: 22%;
             }
         }
     }
     &__item2, &__item3 {
         display: flex;
+        align-items: center;
         gap: 2.8rem;
         &::before {
             content: "";
@@ -503,6 +542,12 @@ h4 {
             background: $text;
             opacity: .5;
         }
+        @media (max-width: $tab) {
+            gap: 1.8rem;
+        }
+        @media (max-width: $min_mob) {
+            gap: .9rem;
+        }
     }
     &__link {
         position: relative;
@@ -511,6 +556,12 @@ h4 {
         text-decoration: none;
         color: $text;
         line-height: 150%;
+        @media (max-width: $tab) {
+            font-size: 1.4rem;
+        }
+        @media (max-width: $min_mob) {
+            font-size: 1.1rem;
+        }
         &::after {
             content: "";
             position: absolute;
@@ -521,6 +572,9 @@ h4 {
             right: 0;
             transition: .5s;
             transform: scaleX(0);
+            @media (max-width: $desk) {
+                display: none;
+            }
         }
         &:hover::after {
             transform: scaleX(1);
@@ -540,6 +594,7 @@ h4 {
         }
         @media (max-width: $min_mob) {
             max-width: 18rem;
+            gap: 3rem;
         } 
     }
     &__name {
@@ -571,32 +626,75 @@ h4 {
 }
 .about {
     margin-bottom: 18rem;
+    @media (max-width: $tab) {
+        margin-bottom: 10rem;
+    }
+    @media (max-width: $min_mob) {
+        margin-bottom: 8rem;
+    }
     &__text {
         color: $text;
         font-size: 2.8rem;
         font-weight: 700;
         line-height: 150%;
         text-transform: uppercase;
-        margin: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        @media (max-width: $tab) {
+            font-size: 2rem;
+        }
+        @media (max-width: $min_mob) {
+            font-size: 1.6rem;
+            margin-bottom: -2rem;
+        }
     }
     &__desckription {
         color: $text;
         font-size: 2.8rem;
         font-weight: 400;
         line-height: 150%;
+        @media (max-width: $tab) {
+            font-size: 2rem;
+        }
+        @media (max-width: $min_mob) {
+            font-size: 1.6rem;
+        }
     }
 }
 .steps {
     margin-bottom: 18rem;
+    @media (max-width: $tab) {
+        margin-bottom: 12rem;
+    }
+    @media (max-width: $min_mob) {
+        margin-bottom: 8rem;
+    }
     &__text {
         color: $text;
         font-size: 2.8rem;
         font-weight: 400;
+        @media (max-width: $tab) {
+            font-size: 2rem;
+        }
+        @media (max-width: $min_mob) {
+            font-size: 1.6rem;
+        }
     }
     &__info {
         color: $text;
         font-size: 1.6rem;
         font-weight: 400;
+        @media (max-width: $tab) {
+            font-size: 1.4rem
+        }
+        @media (max-width: $min_mob) {
+            mfont-size: 1.4rem
+        }
+    }
+    &_one {
+        @media (max-width: $min_mob) {
+            max-width: 15rem;
+        }
     }
     &_one::before {
         content: "01";
@@ -604,6 +702,12 @@ h4 {
         height: 24px;
         color: $text;
         margin-right: 4rem;
+        @media (max-width: $tab) {
+            margin-right: 2rem;
+        }
+        @media (max-width: $min_mob) {
+            margin-right: 1rem;
+        }
     }
     &_two::before {
         content: "02";
@@ -611,6 +715,12 @@ h4 {
         height: 24px;
         color: $text;
         margin-right: 4rem;
+        @media (max-width: $tab) {
+            margin-right: 2rem;
+        }
+        @media (max-width: $min_mob) {
+            margin-right: 1rem;
+        }
     }
     &_three::before {
         content: "03";
@@ -618,6 +728,12 @@ h4 {
         height: 24px;
         color: $text;
         margin-right: 4rem;
+        @media (max-width: $tab) {
+            margin-right: 2rem;
+        }
+        @media (max-width: $min_mob) {
+            margin-right: 1rem;
+        }
     }
 }
 .portfolio {
@@ -634,6 +750,12 @@ h4 {
         right: 0;
         background: linear-gradient(180deg, #151416 0%, rgba(20, 20, 22, 0) 100%);
         z-index: -2;
+        @media (max-width: $tab) {
+            top: 140px;
+        }
+        @media (max-width: $min_mob) {
+            top: 120px;
+        }
     }
     &__title {
         color: $text;
@@ -642,6 +764,12 @@ h4 {
         text-transform: uppercase;
         position: relative;
         margin-bottom: 20rem;
+        @media (max-width: $tab) {
+            font-size: 4.4rem;
+        }
+        @media (max-width: $min_mob) {
+            font-size: 2.8rem;
+        }
         &::after {
             content: '';
             width: 465px;
@@ -652,6 +780,18 @@ h4 {
             top: -130%;
             right: 28%;
             z-index: -1;
+            @media (max-width: $tab) {
+                width: 265px;
+                height: 265px;
+                top: -126%;
+                right: 33%;
+            }
+            @media (max-width: $min_mob) {
+                width: 197px;
+                height: 197px;
+                top: -120%;
+                right: 0%;
+            }
         }
     }
     &__name {
@@ -1085,7 +1225,7 @@ h4 {
 
 //Modal
 .mob-menu__burger {
-    width: 34px;
+    width: 28px;
     height: 22px;
     background-image: url(../images/burger.svg);
     background-repeat: no-repeat;
